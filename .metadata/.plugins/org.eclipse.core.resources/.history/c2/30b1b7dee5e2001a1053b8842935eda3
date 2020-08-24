@@ -1,0 +1,6 @@
+package F01C;
+
+public class Teller {
+	public int verdi;
+
+}

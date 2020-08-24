@@ -1,0 +1,16 @@
+package F01C;
+
+public class RaceCondition {
+
+	public static void main(String[] args) {
+	
+
+		Teller teller = new Teller();
+
+		Thread telleOppTraad = new TelleoppTraad(teller, 1000);
+		
+		Thread telleNedTraad = new TelleNedTraad(teller, 1000);
+	}
+	}
+
+}

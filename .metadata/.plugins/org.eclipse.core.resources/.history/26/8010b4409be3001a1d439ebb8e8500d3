@@ -1,0 +1,11 @@
+package Oppgave2;
+
+public class Chef extends Thread {
+
+	Burger currentBurger = new Burger();
+	BurgerQueue burgerQueue = new BurgerQueue();
+	
+	public void makeBurger() {
+		burgerQueue.addBurger(currentBurger);
+	}
+}

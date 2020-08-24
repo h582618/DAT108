@@ -1,0 +1,19 @@
+import javax.swing.*;
+
+
+public class helloWorld extends Thread {
+
+
+	public String s = "random";
+	
+	@Override
+	public synchronized void run() {
+		 s = JOptionPane.showInputDialog("Legg til beskjed");
+		
+		 
+	}
+	
+	public synchronized String getInput() {
+		return s;
+	}
+}

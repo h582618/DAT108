@@ -1,0 +1,32 @@
+import javax.swing.*;
+
+
+public class helloWorld extends Thread {
+
+	boolean ferdig = false;
+
+	public String s = "Kake ";
+	
+	@Override
+	public synchronized void run() {
+		while(!ferdig) {
+		 this.s = JOptionPane.showInputDialog("Legg til beskjed");
+		 try {
+			Thread.sleep(300);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		 System.out.println(s);
+		}
+		 
+	}
+	
+	public synchronized void stopp() {
+		ferdig = true;
+	}
+	
+	public synchronized String getInput() {
+		return s;
+	}
+}

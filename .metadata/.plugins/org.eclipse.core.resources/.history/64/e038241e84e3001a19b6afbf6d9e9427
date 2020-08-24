@@ -1,0 +1,8 @@
+
+public class PrintThread {
+
+	
+	public void print3Sec(String s) {
+		System.out.println(s);
+	}
+}

@@ -1,0 +1,27 @@
+package Oppgave2;
+
+public class Chef extends Thread {
+
+	BurgerQueue burgerQueue;
+	String name = "Kokk";
+	int burgerNumber = 1;
+	
+	public Chef(BurgerQueue burgerQueue, int i) {
+		this.burgerQueue = burgerQueue;
+		this.name = name + i;
+	}
+	
+	//Make burger
+	@Override
+	public void run() {
+		while(true) {
+			if(!burgerQueue.isFull()){
+			Burger newBurger = new Burger(burgerNumber);
+			burgerQueue.addBurger(newBurger);
+			System.out.println(name + " legger på hamburger ("+newBurger.getNumber()+") => [("+newBurger.getNumber()+")]");
+			burgerNumber++;
+			}
+		}
+		
+	}
+}

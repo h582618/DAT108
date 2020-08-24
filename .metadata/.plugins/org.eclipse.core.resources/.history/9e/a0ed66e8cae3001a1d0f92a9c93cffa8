@@ -1,0 +1,40 @@
+package Oppgave2;
+
+import java.util.Random;
+
+public class Chef extends Thread {
+
+	BurgerQueue burgerQueue;
+	String name = "Kokk";
+	int burgerNumber = 1;
+	
+	public Chef(BurgerQueue burgerQueue, int i) {
+		this.burgerQueue = burgerQueue;
+		this.name = name + i;
+	}
+	
+	
+	
+	//Make burger
+	@Override
+	public synchronized void run() {
+		Random r1 = new Random();
+		
+		int sleepTimer = r1.nextInt();
+		while(true) {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(!burgerQueue.isFull()){
+			Burger newBurger = new Burger(burgerNumber);
+			burgerQueue.addBurger(newBurger);
+			System.out.println(name + " legger på hamburger ("+newBurger.getNumber()+") => [("+newBurger.getNumber()+")]");
+			burgerNumber++;
+			}
+		}
+		
+	}
+}

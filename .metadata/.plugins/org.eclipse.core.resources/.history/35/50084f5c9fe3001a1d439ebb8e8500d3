@@ -1,0 +1,16 @@
+package Oppgave2;
+
+public class Waitress extends Thread{
+
+	Burger currentBurger;
+	BurgerQueue burgerQueue;
+	
+	public Waitress(BurgerQueue burgerQueue) {
+		this.burgerQueue = burgerQueue;
+	}
+	//Fjern burger
+	@Override
+	public void run() {
+		currentBurger = burgerQueue.takeBurger();
+	}
+}

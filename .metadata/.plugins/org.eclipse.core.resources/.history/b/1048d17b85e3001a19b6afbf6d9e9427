@@ -1,0 +1,19 @@
+import javax.swing.*;
+
+
+public class helloWorld extends Thread {
+
+
+	public String s;
+	
+
+	public void setInput() {
+		 s = JOptionPane.showInputDialog("Legg til beskjed");
+		
+		 
+	}
+	
+	public String getInput() {
+		return s;
+	}
+}

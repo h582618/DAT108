@@ -1,0 +1,30 @@
+public class PrintThread extends Thread {
+
+
+	
+	
+	public Text text;
+	
+	boolean ferdig = false;
+	
+	public PrintThread(Text text) {
+		this.text = text;
+	}
+
+	public void stopp() {
+		ferdig = true;
+	}
+	@Override
+	public void run() {	
+		while(!ferdig) {
+		System.out.println(text.getText());
+		try {
+			Thread.sleep(300);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+}
+
+}

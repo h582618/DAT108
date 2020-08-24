@@ -1,0 +1,19 @@
+package F01;
+
+public class TiTraader {
+
+	public static void main(String [] args) {
+		
+		String navn = Thread.currentThread().getName();
+		System.out.println("Main tråden heter " + navn);
+		
+		Thread t1 = new Thread("Ding dong tråd");
+		
+		t1.start();
+		
+		for(int i = 1; i <= 10; i++) {
+			Thread t = new Thread(new minRunnable(), "Tråd nr. " + i);
+			t.start();
+		}
+	}
+}

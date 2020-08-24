@@ -1,0 +1,18 @@
+public class PrintThread extends Thread {
+
+
+	boolean ferdig = false;
+	
+	public void printString(String s) throws InterruptedException {
+		while(!ferdig) {
+		System.out.println(s);
+		Thread.sleep(300);
+		}
+	}
+	
+	@Override
+	public void run() {	
+		while(!ferdig) {
+		System.out.println("test");
+		}}
+}

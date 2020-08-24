@@ -1,0 +1,17 @@
+package Oppgave2;
+
+public class Chef extends Thread {
+
+	Burger currentBurger;
+	BurgerQueue burgerQueue;
+	
+	public Chef(BurgerQueue burgerQueue) {
+		this.burgerQueue = burgerQueue;
+	}
+	
+	//Make burger
+	@Override
+	public void run() {
+		burgerQueue.addBurger(currentBurger);
+	}
+}

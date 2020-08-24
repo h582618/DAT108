@@ -1,0 +1,50 @@
+package Oppgave2;
+import java.util.LinkedList;
+
+public class BurgerQueue  {
+
+	public static int maxBurgers = 5;
+	LinkedList<Burger> burgerQueue = new LinkedList<Burger>();
+	int burgerNumber = 1;
+	
+	public synchronized void addBurger(Burger burger) throws InterruptedException {
+		if(isFull()){
+			wait();
+		}
+			burgerNumber += 1;
+			burger.setNumber(burgerNumber);
+			burgerQueue.add(burger);
+			if(isFull()) {
+				notify();
+			}
+			
+		}
+	public synchronized Burger takeBurger() throws InterruptedException {
+		
+		Burger burger = null;
+		
+		if(isEmpty()) {
+			wait();
+		}
+		
+		burger = burgerQueue.pop();
+		notify();
+		return burger;
+		
+	}
+	public boolean isFull() {
+		return burgerQueue.size() == maxBurgers;
+	}
+	public boolean isEmpty() {
+		return burgerQueue.isEmpty();
+	}
+	public String toString() {
+		
+		String burgerNumbers = "[";
+		for(Burger burger : burgerQueue) {
+			burgerNumbers += "(" + burger.getNumber() + ")";
+		}
+		burgerNumbers = "]";
+	}
+	return burgerNumbers;
+}

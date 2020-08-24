@@ -1,0 +1,33 @@
+import javax.swing.*;
+
+public class Oppgave1 {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+	
+		String s = "Start streng";
+	
+		while(true) {
+			helloWorld helloWorld1 = new helloWorld();
+			PrintThread thread2 = new PrintThread () {
+			  public synchronized void run () {
+			   System.out.println(s);
+			  }
+			};
+		
+			
+		helloWorld1.start();
+		s = helloWorld1.getInput();
+		thread2.start();
+		
+		helloWorld1.stopp();
+		thread2.stopp();
+
+		}
+		
+		
+	}
+	
+}
+	
+

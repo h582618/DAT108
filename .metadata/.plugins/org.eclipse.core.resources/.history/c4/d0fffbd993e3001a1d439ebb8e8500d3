@@ -1,0 +1,33 @@
+public class PrintThread extends Thread {
+
+
+	String s = "Start streng";
+	
+	boolean ferdig = false;
+	
+	public void printString(String s) throws InterruptedException {
+		while(!ferdig) {
+		System.out.println(s);
+		Thread.sleep(3000);
+		}
+	}
+	
+	public synchronized void stopp() {
+		ferdig = true;
+	}
+	@Override
+	public void run() {	
+		while(!ferdig) {
+		System.out.println(s);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+}
+	public void setStreng(String s) {
+		this.s = s;
+	}
+}

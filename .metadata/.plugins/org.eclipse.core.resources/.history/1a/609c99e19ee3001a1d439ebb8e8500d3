@@ -1,0 +1,10 @@
+package Oppgave2;
+
+public class Burger {
+
+	public int hamburgerNumber;
+	
+	public Burger() {
+		int hamburgerNumber;
+	}
+}
