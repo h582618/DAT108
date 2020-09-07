@@ -13,7 +13,7 @@ public class PrintThread extends Thread {
 
 	@Override
 	public void run() {	
-		while(text.getText().toUpperCase() != "QUIT") {
+		while(!text.getText().toUpperCase().equals("QUIT")) {
 		System.out.println(text.getText());
 		try {
 			Thread.sleep(3000);

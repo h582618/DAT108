@@ -1,9 +1,0 @@
-
-public class Text {
-
-	public String text = "Null";
-	
-	public String getText() {
-		return text;
-	}
-}

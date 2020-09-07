@@ -1,5 +1,0 @@
-package F01;
-
-public class minRunnable extends ThreadGroup {
-
-}

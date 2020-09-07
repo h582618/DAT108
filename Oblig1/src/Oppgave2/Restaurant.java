@@ -12,7 +12,6 @@ public class Restaurant {
 
 		Waitress waitress = new Waitress(burgerQueue, 1);
 		Waitress waitress2 = new Waitress(burgerQueue, 2);
-		Waitress waitress3 = new Waitress(burgerQueue, 3);
 
 		chef.start();
 		chef2.start();
@@ -20,6 +19,7 @@ public class Restaurant {
 
 		waitress.start();
 		waitress2.start();
+		
 
 	}
 

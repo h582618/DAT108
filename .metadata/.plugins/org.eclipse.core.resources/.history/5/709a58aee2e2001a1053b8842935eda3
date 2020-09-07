@@ -1,8 +1,0 @@
-package F01;
-
-public class MinTraad extends Thread {
-
-	public MinTraad(String navn) {
-		super(navn);
-	}
-}

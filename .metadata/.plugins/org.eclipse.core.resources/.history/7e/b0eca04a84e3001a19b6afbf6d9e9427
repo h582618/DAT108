@@ -1,8 +1,0 @@
-
-public class PrintThread {
-
-	
-	public void printString(String s) {
-		System.out.println(s);
-	}
-}
