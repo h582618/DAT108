@@ -14,7 +14,7 @@ public class oppgave3 {
 
 	public static void main(String[] args) {
 
-		Ansatt a1 = new Ansatt("Geir", "Thomassen", "Økonom", Kjonn.MALE, 300000);
+		Ansatt a1 = new Ansatt("Geir", "Thomassen", "ï¿½konom", Kjonn.MALE, 300000);
 		Ansatt a2 = new Ansatt("Thomas", "Geiresen", "Systemutvikler", Kjonn.MALE, 980000);
 		Ansatt a3 = new Ansatt("Turild", "Potetesen", "Frontend Utvikler", Kjonn.MALE, 780000);
 		Ansatt a4 = new Ansatt("Flat", "Womanesen", "Naver", Kjonn.FEMALE, 300000);
@@ -48,9 +48,9 @@ public class oppgave3 {
 
 		// E
 
-		Boolean tjenerMerEnnÅtteK = listen.stream().anyMatch((a) -> a.getAarslonn() > 800000);
+		Boolean tjenerMerEnnaatteK = listen.stream().anyMatch((a) -> a.getAarslonn() > 800000);
 
-		System.out.println(tjenerMerEnnÅtteK);
+		System.out.println(tjenerMerEnnaatteK);
 
 		// F
 
